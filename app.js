@@ -8,6 +8,16 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('X-Method-Override'));
 app.use(methodOverride('_method'));
 
+// Middleware configuration
+app.use((req, res, next) => {
+    if(request.url === '/favicon.ico') {
+        res.writeHead(200, {'Content-type': 'image/x-icon'});
+        response.end('');
+    } else {
+        next();
+    }
+});
+
 // Route '/'
 app.get('/', (req, res) => {
     res.status(200);
