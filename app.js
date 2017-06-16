@@ -1,8 +1,15 @@
 const express = require('express');
 const app = express();
+const methodOverride = require('method-override');
 
+// Method Override configuration
+app.use(methodOverride('X-HTTP-Method'));
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('X-Method-Override'));
+app.use(methodOverride('_method'));
+
+// Route '/'
 app.get('/', (req, res) => {
-    //res.send('Hello World!');
     res.status(200);
 
     if(!req.accepts('text')) {
@@ -14,6 +21,7 @@ app.get('/', (req, res) => {
     }
 });
 
+// Server configuration
 let server = app.listen(3000, () => {
     let host = server.address().address;
     let port = server.address().port;
