@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 
 // Method Override configuration
 app.use(methodOverride('X-HTTP-Method'));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('X-Method-Override'));
 app.use(methodOverride('_method'));
+
+// Body Parser configuration
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extend: true}));
 
 // Route '/'
 app.get('/', (req, res) => {
