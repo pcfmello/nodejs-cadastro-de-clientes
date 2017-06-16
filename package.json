@@ -11,6 +11,7 @@
   "author": "Paulo Cesar Ferreira de Mello <pcfmello@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "method-override": "^2.3.9"
   }
 }
