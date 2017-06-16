@@ -4,6 +4,8 @@
   "description": "This is a customer base API created to learn NodeJS Server and MongoDB Database",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "nodemon": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paulo Cesar Ferreira de Mello <pcfmello@gmail.com>",
