@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-customer-base-api",
+  "version": "1.0.0",
+  "description": "This is a customer base API created to learn NodeJS Server and MongoDB Database",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paulo Cesar Ferreira de Mello <pcfmello@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
