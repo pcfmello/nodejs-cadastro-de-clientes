@@ -1,7 +1,7 @@
-const express = require('express');
-const methodOverride = require('method-override');
-const bodyParser = require('body-parser');
-const app = express();
+let express = require('express');
+let methodOverride = require('method-override');
+let bodyParser = require('body-parser');
+let app = express();
 
 // SERVER CONFIG ===
 // Method Override configuration
@@ -31,10 +31,7 @@ app.use((req, res, next) => {
 
 // ROUTES CONFIG ===
 // Main route
-app.get('/', (req, res) => {
-    res.status(200);
-    res.json({name: 'Paulo Cesar Ferreira de Mello', email: 'pcfmello@gmail.com'});
-});
+app.use('/', require('./routes'));
 
 // ERRORS HANDLING CONFIG ===
 // Error 404
