@@ -47,8 +47,4 @@ app.use((err, req, res, next) => {
 });
 
 // SERVER CONFIG
-let server = app.listen(3000, () => {
-    let host = server.address().address;
-    let port = server.address().port;
-    console.log(`Customer Base API listening at http://${host}:${port}`);
-});
+module.exports = app;
