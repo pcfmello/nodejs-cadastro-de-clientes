@@ -2,10 +2,10 @@
   "name": "nodejs-customer-base-api",
   "version": "1.0.0",
   "description": "This is a customer base API created to learn NodeJS Server and MongoDB Database",
-  "main": "app.js",
+  "main": "./bin/www",
   "scripts": {
-    "start": "node app.js",
-    "nodemon": "nodemon app.js",
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paulo Cesar Ferreira de Mello <pcfmello@gmail.com>",
