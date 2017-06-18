@@ -1,3 +1,5 @@
+let CustomerModel = require('../models/CustomerModel');
+
 function CustomerController() {}
 
 CustomerController.prototype.getAll = (req, res, next) => {
