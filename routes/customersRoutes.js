@@ -6,7 +6,7 @@ router.get('/', CustomerController.getAll);
 
 router.get('/:_id', CustomerController.getById);
 
-router.post('/', CustomerController.save);
+router.post('/', CustomerController.create);
 
 router.put('/:_id', CustomerController.update);
 
