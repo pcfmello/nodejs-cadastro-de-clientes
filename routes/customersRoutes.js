@@ -1,15 +1,18 @@
 let express = require('express');
 let router = express.Router();
-let CustomerController = require('../controllers/CustomerController');
+let mongoose = require('../db/mongoose');
 
-router.get('/', CustomerController.getAll);
+let CustomerDAO = require('../models/CustomerDAO')(mongoose);
+let CustomerController = require('../controllers/CustomerController')(CustomerDAO);
 
-router.get('/:_id', CustomerController.getById);
+router.get('/', CustomerController.getAll.bind(CustomerController));
 
-router.post('/', CustomerController.create);
+router.get('/:_id', CustomerController.getById.bind(CustomerController));
 
-router.put('/:_id', CustomerController.update);
+router.post('/', CustomerController.create.bind(CustomerController));
 
-router.delete('/:_id', CustomerController.remove);
+router.put('/:_id', CustomerController.update.bind(CustomerController));
+
+router.delete('/:_id', CustomerController.remove.bind(CustomerController));
 
 module.exports = router;

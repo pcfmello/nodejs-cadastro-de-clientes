@@ -1,8 +1,6 @@
 let mongoose = require('mongoose');
-let config = require('config');
 let debug = require('debug')('nodejs_customer_base_api:db');
-
-'use strict';
+let config = require('config');
 
 function _connection() {
     let username = config.get('mongo.username'),
@@ -15,7 +13,7 @@ function _connection() {
 }
 mongoose.connect(_connection());
 let db = mongoose.connection;
-db.on('error', (err) => debug(err) );
+db.on('error', (err) => debug(err));
 db.once('open', (callback) => debug('connected to mongodb'));
 
-module.exports = db;
+module.exports = mongoose;
